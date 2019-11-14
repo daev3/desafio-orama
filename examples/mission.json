@@ -1,0 +1,23 @@
+{
+  "mission": {
+    "id": 42,
+    "status": "seeking",
+    "startDate": "2018-07-14T09:31:21+02:00",
+    "retributionWished": 500,
+    "durationInDays": 90,
+    "expertise": {
+      "id": 2,
+      "name": "Front-end Development"
+    },
+    "skills": [
+      {
+        "id": 88,
+        "name": "React"
+      },
+      {
+        "id": 78,
+        "name": "JavaScript"
+      }
+    ]
+  }
+}
