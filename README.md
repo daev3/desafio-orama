@@ -72,6 +72,9 @@ O resultado deverá ser formatado em JSON com a exata mesma estrutura do exemplo
 6. Respeito pelo principio KISS e DRY
 7. Use de git commits
 
+# Extra
+1. Docker
+
 # Como
 
 1. Dê um fork nesse repositório ou clone, caso não possua uma conta no github
