@@ -1,6 +1,6 @@
 # Contexto
 
-Temos diversos freelancers, cada freelancer tem várias experiencias profissionais descritas nos seus perfis.
+Temos diversos freelancers, cada freelancer possui experiencias profissionais descritas nos seus perfis.
 
 Nós usamos essas experiencias profissionais no nosso algorítimo de busca para o freelancer com mais relevância para nossa missão.
 
@@ -14,9 +14,9 @@ Se vocês abrir o arquivo `example/freelancer.json`, você verá que esse freela
 
 Nós gostaríamos de computar o **total de meses** que o freelancer trabalhou com **cada habilidade**
 
-Você terá irá receber um payload similar a `example/freelancer.json`.
+Você irá receber um payload similar a `example/freelancer.json`.
 
-O resultado devera ser formatado em JSON com a exata mesma estrutura do exemplo a seguir:
+O resultado deverá ser formatado em JSON com a exata mesma estrutura do exemplo a seguir:
 ```json
 {
     "freelance": {
@@ -54,7 +54,7 @@ O resultado devera ser formatado em JSON com a exata mesma estrutura do exemplo 
 
 # Regras
 
-1. Meses que as experiências se sobrepõe nao devem ser contabilizadas duas vezes, veja [assets/months-overlap.png](./assets/months-overlap.png)
+1. Meses que as experiências se sobrepõe não devem ser contabilizadas duas vezes, veja [assets/months-overlap.png](./assets/months-overlap.png)
 2. Todas os valores de `startDate` e `endDate` serão sempre o primeiro dia do mês.
 3. Sua aplicação deve ser uma API rest
 4. Você deve usar Python 3.6+
