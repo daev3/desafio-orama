@@ -70,7 +70,7 @@ O resultado deverá ser formatado em JSON com a exata mesma estrutura do exemplo
 4. Testes
 5. Uso inteligente de pacotes ou bibliotecas externas
 6. Respeito pelo principio KISS e DRY
-7. Use de git commits
+7. Uso de git commits
 
 # Extra
 1. Docker
