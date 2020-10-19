@@ -73,14 +73,14 @@ class Freelancer:
                     skill_id=skill.skill_id,
                     skill_name=skill.skill_name,
                     start_date=past_skill.start_date,
-                    end_date=skill.end_date,
+                    end_date=max(skill.end_date, past_skill.end_date),
                 )
             elif past_skill.overlaps_start(skill):
                 new_skill = SkillExperience(
                     skill_id=skill.skill_id,
                     skill_name=skill.skill_name,
                     start_date=skill.start_date,
-                    end_date=past_skill.end_date,
+                    end_date=max(skill.end_date, past_skill.end_date),
                 )
             else:
                 past_skill = skill
