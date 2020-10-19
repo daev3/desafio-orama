@@ -68,14 +68,14 @@ class Freelancer:
             if not past_skill:
                 past_skill = skill
                 continue
-            if skill.overlaps(past_skill):
+            if skill.overlaps_start(past_skill):
                 new_skill = SkillExperience(
                     skill_id=skill.skill_id,
                     skill_name=skill.skill_name,
                     start_date=past_skill.start_date,
                     end_date=skill.end_date,
                 )
-            elif past_skill.overlaps(skill):
+            elif past_skill.overlaps_start(skill):
                 new_skill = SkillExperience(
                     skill_id=skill.skill_id,
                     skill_name=skill.skill_name,
@@ -83,6 +83,7 @@ class Freelancer:
                     end_date=past_skill.end_date,
                 )
             else:
+                past_skill = skill
                 continue
 
             skill_list.append(new_skill)
@@ -93,6 +94,7 @@ class Freelancer:
                 break
 
             self.merge_overlaping_skills(skill_list)
+            break
 
         return skill_list
     
@@ -105,7 +107,7 @@ class Freelancer:
         """
         total_time = 0
         for skill in skill_list:
-            total_time += skill.calculate_total_months()
+            total_time += skill.calculate_skill_total_months()
         
         return total_time
 
@@ -118,12 +120,9 @@ class SkillExperience:
         self.start_date = start_date
         self.end_date = end_date
     
-    def __repr__(self):
-        return self.skill_name
-    
-    def overlaps(self, other_skill):
+    def overlaps_start(self, other_skill):
         """
-        Check is skill period of time overlaps incoming skill period of time
+        Check is skill start period of time overlaps incoming skill period of time
 
         :param other_skill: Instance of SkillExperience class
         :return: Boolean if overlaps
@@ -131,7 +130,7 @@ class SkillExperience:
         overlaps = other_skill.start_date < self.start_date < other_skill.end_date
         return True if overlaps else False
     
-    def calculate_total_months(self):
+    def calculate_skill_total_months(self):
         """
         Get the time in months of this skill
 
